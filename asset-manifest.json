@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/linggle-web/static/css/main.aef67360.chunk.css",
-    "main.js": "/linggle-web/static/js/main.24cbb6b4.chunk.js",
-    "main.js.map": "/linggle-web/static/js/main.24cbb6b4.chunk.js.map",
+    "main.js": "/linggle-web/static/js/main.072d8e17.chunk.js",
+    "main.js.map": "/linggle-web/static/js/main.072d8e17.chunk.js.map",
     "runtime-main.js": "/linggle-web/static/js/runtime-main.b62cfb97.js",
     "runtime-main.js.map": "/linggle-web/static/js/runtime-main.b62cfb97.js.map",
     "static/js/2.501f7869.chunk.js": "/linggle-web/static/js/2.501f7869.chunk.js",
     "static/js/2.501f7869.chunk.js.map": "/linggle-web/static/js/2.501f7869.chunk.js.map",
     "index.html": "/linggle-web/index.html",
-    "precache-manifest.10966cc6a0b9902ca8025a81193c63c7.js": "/linggle-web/precache-manifest.10966cc6a0b9902ca8025a81193c63c7.js",
+    "precache-manifest.7122113f8ba0a2492a6857cab81825a3.js": "/linggle-web/precache-manifest.7122113f8ba0a2492a6857cab81825a3.js",
     "service-worker.js": "/linggle-web/service-worker.js",
     "static/css/main.aef67360.chunk.css.map": "/linggle-web/static/css/main.aef67360.chunk.css.map",
     "static/js/2.501f7869.chunk.js.LICENSE.txt": "/linggle-web/static/js/2.501f7869.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.b62cfb97.js",
     "static/js/2.501f7869.chunk.js",
     "static/css/main.aef67360.chunk.css",
-    "static/js/main.24cbb6b4.chunk.js"
+    "static/js/main.072d8e17.chunk.js"
   ]
 }
