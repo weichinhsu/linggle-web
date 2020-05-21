@@ -34,7 +34,7 @@ const routes = [{
 
 export default (props) => {
     return (
-        <HashRouter basename='/'>
+        <HashRouter basename={process.env.PUBLIC_URL}>
             <Switch>
                 <Route path="/" exact component={Home} />
                 <SearchLayout route={routes}>
@@ -46,23 +46,3 @@ export default (props) => {
         </HashRouter>
     )
 }
-
-// export default (props) => {
-//     return (
-//         <ConnectedRouter history={props.history}>
-//             <RouterRoot {...props} >
-//                 <Switch >
-//                 <Route path="/" exact render={ () => (< Redirect to='/news' />)}/> 
-//                     <HomeLayout route={route} >
-//                         <Switch >
-//                             {
-//                                 _.map(route, item => (<Route key={item.path} path={item.path} exact component={item.component} />))
-//                             }
-//                             <Route  component={News}/>)}/> 
-//                         </Switch>
-//                     </HomeLayout>
-//                 </Switch>
-//             </RouterRoot>
-//         </ConnectedRouter>
-//     )
-// }
