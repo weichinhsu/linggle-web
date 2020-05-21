@@ -7,16 +7,18 @@ import { faListOl, faFileAlt, faEdit, faSpellCheck, faLanguage, faBars } from '@
 
 class Button extends Component {
     render() {
-        const {icon, name} = this.props
-        return <div>
-            {icon ? <FontAwesomeIcon icon={icon} className="feature-icon"/> : null}
+        const { icon, name, click } = this.props
+        console.log(click)
+        return <div onClick={click}>
+            {icon ? <FontAwesomeIcon icon={icon} className="feature-icon" /> : null}
             {name ? name : null}
         </div>
     }
 }
 
-class Welcome extends Component {
+class Home extends Component {
     render() {
+        const { history } = this.props
         return (
             <div className="App">
                 <header>
@@ -36,21 +38,21 @@ class Welcome extends Component {
                         </div>
                     </div>
                     <div className="App-feature">
-                        <Button icon={faListOl} name="Ask"/>
-                        <Button icon={faFileAlt} name="Read"/>
-                        <Button icon={faEdit} name="Write"/>
-                        <Button icon={faSpellCheck} name="Grammar"/>
-                        <Button icon={faLanguage} name="Translate"/>
+                        <Button icon={faListOl} name="Ask" click={() => history.push('ask')} />
+                        <Button icon={faFileAlt} name="Read" click={() => history.push('read')} />
+                        <Button icon={faEdit} name="Write" click={() => history.push('write')} />
+                        <Button icon={faSpellCheck} name="Grammar" click={() => history.push('grammar')} />
+                        <Button icon={faLanguage} name="Translate" click={() => history.push('translate')} />
                     </div>
                 </div>
                 <footer>
-                    <Button icon={faBars}/>
-                    <Button name="About"/>
-                    <Button name="How it works"/>
+                    <Button icon={faBars} />
+                    <Button name="About" />
+                    <Button name="How it works" />
                 </footer>
             </div>
         );
     }
 }
 
-export default Welcome;
+export default Home;
