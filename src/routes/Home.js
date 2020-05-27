@@ -17,6 +17,12 @@ class Button extends Component {
 }
 
 class Home extends Component {
+    componentDidMount() {
+        this.props.dispatch({
+            type: 'search/GET_search',
+            payload: 'discuss ?about the'
+        });
+    }
     render() {
         const { history } = this.props
         return (
@@ -55,4 +61,4 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export default connect()(Home);

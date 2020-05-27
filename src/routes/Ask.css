@@ -9,3 +9,25 @@
 .row {
   padding: 10px;
 }
+
+.read {
+  display: flex;
+}
+
+.read > .left, .right {
+  flex: 1;
+  margin: 20px;
+  /* background-color: white; */
+}
+
+.read > .left > #input {
+  
+}
+
+.read > .left > #input:empty:before{ 
+  content: 'Enter texts, .pdf, .word or URL'; 
+  color: gray; 
+} 
+.read > .left > #input:focus:before{
+  content:none;
+}

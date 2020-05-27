@@ -34,7 +34,7 @@ const routes = [{
 
 export default (props) => {
     return (
-        <HashRouter basename={process.env.PUBLIC_URL}>
+        <HashRouter basename='/'>
             <Switch>
                 <Route path="/" exact component={Home} />
                 <SearchLayout route={routes}>
