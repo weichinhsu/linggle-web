@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'dva';
-import { Link, useHistory } from "react-router-dom";
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faListOl, faFileAlt, faEdit, faSpellCheck, faLanguage, faBars } from '@fortawesome/free-solid-svg-icons'

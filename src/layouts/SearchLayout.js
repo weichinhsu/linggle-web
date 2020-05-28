@@ -38,11 +38,11 @@ class SearchLayout extends Component {
                         <button type="button" className="btn sign-in rounded-pill">Sign in</button>
                     </div>
                     <div className="menu">
-                        <Button icon={faListOl} name="Ask" active={location == 'ask' ? true : false} />
-                        <Button icon={faFileAlt} name="Read" active={location == 'read' ? true : false} />
-                        <Button icon={faEdit} name="Write" active={location == 'write' ? true : false} />
-                        <Button icon={faSpellCheck} name="Grammar" active={location == 'grammar' ? true : false} />
-                        <Button icon={faLanguage} name="Translate" active={location == 'translate' ? true : false} />
+                        <Button icon={faListOl} name="Ask" active={location === 'ask' ? true : false} />
+                        <Button icon={faFileAlt} name="Read" active={location === 'read' ? true : false} />
+                        <Button icon={faEdit} name="Write" active={location === 'write' ? true : false} />
+                        <Button icon={faSpellCheck} name="Grammar" active={location === 'grammar' ? true : false} />
+                        <Button icon={faLanguage} name="Translate" active={location === 'translate' ? true : false} />
                     </div>
                 </header>
                 <div className="container-fluid p-0">

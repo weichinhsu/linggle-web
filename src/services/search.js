@@ -1,9 +1,10 @@
 import axios from 'axios'
 
-const linggle_search = 'https://linggle.com/query/'
+// const linggle_search = 'https://linggle.com/query/'
 
 export function search(payload) {
-  return axios.get('https://linggle.com/query/discuss%20about%20the')
+  console.log(1234)
+  return axios.get('https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=6')
     .then((response) => {
       // handle success
       console.log(response);
