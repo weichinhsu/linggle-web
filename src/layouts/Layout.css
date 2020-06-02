@@ -1,6 +1,6 @@
 .layout {
   background-color: #203152;
-  height: 100vh;
+  height: 100%;
 }
 
 .layout > header {
@@ -32,7 +32,6 @@
   flex-direction: row;
   justify-content: center;
   color: white;
-  max-width: 70vw;
   min-width: 70vw;
   font-size: 1.2em;
   letter-spacing: .1em;
@@ -54,3 +53,10 @@
   border-bottom: #ffa51f 3px solid;
 }
 
+.content {
+  position: absolute;
+  top: 132px;
+  bottom: 0;
+  display: flex;
+  background-color: #203152;
+}

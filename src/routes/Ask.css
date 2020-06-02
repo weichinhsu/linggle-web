@@ -1,5 +1,6 @@
 .ask {
   background-color: white;
+  overflow: scroll;
 }
 
 .progress {
@@ -30,4 +31,17 @@
 } 
 .read > .left > #input:focus:before{
   content:none;
+}
+
+.ask-icon {
+  text-align: center;
+}
+
+.example > div {
+  margin: 10px 0
+}
+
+.highlight {
+  color: #ef8f00;
+  font-weight: 600;
 }

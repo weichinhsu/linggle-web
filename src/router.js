@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import { Route, Switch, routerRedux, withRouter, Redirect } from 'dva/router';
-import { HashRouter, Route, withRouter, Switch, Redirect, BrowserRouter } from "react-router-dom";
+// import { Route, Switch, BrowserRouter } from 'dva/router';
+import { Route, Switch, BrowserRouter } from "react-router-dom";
 import PropTypes from 'prop-types';
 // import _ from 'lodash';
 import SearchLayout from './layouts/SearchLayout'
@@ -34,7 +34,7 @@ const routes = [{
 
 export default (props) => {
     return (
-        <HashRouter basename='/'>
+        <BrowserRouter basename='/'>
             <Switch>
                 <Route path="/" exact component={Home} />
                 <SearchLayout route={routes}>
@@ -43,6 +43,6 @@ export default (props) => {
                     </Switch>
                 </SearchLayout>
             </Switch>
-        </HashRouter>
+        </BrowserRouter>
     )
 }

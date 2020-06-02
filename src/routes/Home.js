@@ -7,7 +7,6 @@ import { faListOl, faFileAlt, faEdit, faSpellCheck, faLanguage, faBars } from '@
 class Button extends Component {
     render() {
         const { icon, name, click } = this.props
-        console.log(click)
         return <div onClick={click}>
             {icon ? <FontAwesomeIcon icon={icon} className="feature-icon" /> : null}
             {name ? name : null}
@@ -16,11 +15,20 @@ class Button extends Component {
 }
 
 class Home extends Component {
-    componentDidMount() {
+    state = {
+        search: ''
+    }
+    handleChange = (event) => {
+        this.setState({ search: event.target.value });
+    }
+    linggleSearch = (event) => {
         this.props.dispatch({
             type: 'search/GET_search',
-            payload: 'discuss ?about the'
+            payload: this.state.search,
+        }).then(() => {
+            this.props.history.push('ask')
         });
+        event.preventDefault();
     }
     render() {
         const { history } = this.props
@@ -32,15 +40,18 @@ class Home extends Component {
                 <div className="App-content">
                     <div className="App-title">Linggle</div>
                     <div className="border shadow px-3 py-1 my-4 bg-white rounded-pill">
-                        <div className="input-group">
-                            <div className="search-icon"></div>
-                            <input type="text" id="search" className="dropdown form-control border-0 shadow-none ml-4 mr-4"
-                                placeholder="Search Linggle, or enter any text or URL" autoFocus data-reference="parent"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+                        <form onSubmit={this.linggleSearch}>
+                            <div className="input-group">
+                                <div className="search-icon"></div>
+                                <input type="text" id="search" className="dropdown form-control border-0 shadow-none ml-4 mr-4"
+                                    placeholder="Search Linggle, or enter any text or URL" autoFocus data-reference="parent"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    value={this.state.search} onChange={this.handleChange} />
 
-                            <div className="dropdown-menu" aria-labelledby="search">
+                                <div className="dropdown-menu" aria-labelledby="search">
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                     <div className="App-feature">
                         <Button icon={faListOl} name="Ask" click={() => history.push('ask')} />

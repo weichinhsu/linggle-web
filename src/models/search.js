@@ -4,6 +4,7 @@ export default {
   namespace: 'search',
   state: {
     list: null,
+    example: null
   },
   reducers: {
     SET_search(state, { payload }) {
@@ -12,10 +13,19 @@ export default {
         list: payload
       }
     },
-    RESET_list(state) {
+    SET_example(state, { payload }) {
       return {
         ...state,
-        list: null,
+        example: payload
+      }
+    },
+    SET_Gbook_example(state, { payload }) {
+      return {
+        ...state,
+        example: {
+          ...state.example,
+          examples: payload
+        }
       }
     }
   },
@@ -28,6 +38,23 @@ export default {
           type: 'SET_search',
           payload: data,
         })
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    * GET_example({ payload }, { put, call, select }) {
+      try {
+        const data = yield call(api.example, payload);
+        const gbooks = yield call(api.google_example, payload)
+        const _g_example = gbooks.items.map((val) => {
+          return val.searchInfo.textSnippet
+        })
+
+        yield put({
+          type: 'SET_example',
+          payload: data,
+        })
+        console.log(_g_example)
       } catch (error) {
         console.log(error)
       }
