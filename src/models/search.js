@@ -24,7 +24,10 @@ export default {
         ...state,
         example: {
           ...state.example,
-          examples: payload
+          examples: [
+            ...state.example.examples,
+            ...payload
+          ]
         }
       }
     }
@@ -46,15 +49,22 @@ export default {
       try {
         const data = yield call(api.example, payload);
         const gbooks = yield call(api.google_example, payload)
+        console.log(gbooks)
+
         const _g_example = gbooks.items.map((val) => {
-          return val.searchInfo.textSnippet
+          let sentences = val.searchInfo.textSnippet.replace(/<b>|<\/b>|<br>|\n|”|“/g, '').replace(/([.?!])("|“|”)*\s+(?=[^a-z,<])/g, "$1|").split("|");
+          sentences = sentences.filter(sentence => sentence.toLowerCase().includes(data.ngram.toLowerCase()))[0];
+          return sentences
         })
 
         yield put({
           type: 'SET_example',
           payload: data,
         })
-        console.log(_g_example)
+        yield put({
+          type: 'SET_Gbook_example',
+          payload: _g_example,
+        })
       } catch (error) {
         console.log(error)
       }

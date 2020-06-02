@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'dva';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faChevronCircleRight } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faMinus, faChevronCircleRight } from '@fortawesome/free-solid-svg-icons'
 import './Ask.css'
 
 class Ask extends Component {
@@ -15,14 +15,15 @@ class Ask extends Component {
     let regexp = new RegExp(ngram, 'ig');
     return <div key={index}>
       <FontAwesomeIcon icon={faChevronCircleRight} className="feature-icon" />
-      <span dangerouslySetInnerHTML={{__html:value.replace(regexp, '<span class="highlight">$&</span>')}}></span>
+      <span dangerouslySetInnerHTML={{ __html: value.replace(regexp, '<span class="highlight">$&</span>') }}></span>
     </div>
   }
   renderRowDate = (value, index) => {
     const total = this.props.list.map((v) => { return v[1] }).reduce((a, b) => { return a + b });
     const percentage = Math.round(value[1] / total * 10000) / 100
     const { example } = this.props
-    console.log(this.props.example)
+    const icon = faPlus === faPlus ? faMinus : faPlus
+
     return <div key={index} className="row line">
       <div className="col-9">
         <span>{value[0]}</span>
@@ -32,11 +33,13 @@ class Ask extends Component {
       </div>
       <div className="col-1">{percentage} %</div>
       <div className="col-1">{value[1]}</div>
-      <div className="col-1 ask-icon" onClick={() => this.linggleExample(value[0])}><FontAwesomeIcon icon={faPlus} className="feature-icon" /></div>
+      <div className="col-1 ask-icon" onClick={() => this.linggleExample(value[0])}>
+        <FontAwesomeIcon icon={faPlus} className="feature-icon" />
+      </div>
       {example ? <div className="col-12 example">
         {example.ngram === value[0] ? example.examples.map((value, index) => this.renderExample(value, index, example.ngram)) : null}
       </div>
-      : null}
+        : null}
     </div>
   }
   render() {

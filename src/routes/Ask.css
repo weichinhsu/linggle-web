@@ -1,6 +1,7 @@
 .ask {
   background-color: white;
   overflow: scroll;
+  padding-bottom: 5em;
 }
 
 .progress {
