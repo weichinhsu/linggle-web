@@ -1,16 +1,27 @@
 import axios from 'axios'
 
-// const linggle_search = 'https://linggle.com/query/'
+const GBOOKS_API = 'https://www.googleapis.com/books/v1/volumes?'
 
 export function search(payload) {
-  console.log(1234)
-  return axios.get('https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=6')
-    .then((response) => {
-      // handle success
-      console.log(response);
-    })
+  return axios.get('/query/' + encodeURIComponent(payload))
+    .then((response) => response.data)
     .catch((error) => {
-      // handle error
+      console.log(error);
+    });
+}
+
+export function example(payload) {
+  return axios.post('/example/', { ngram: payload })
+    .then((response) => response.data)
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+export function google_example(payload) {
+  return axios.get(GBOOKS_API + 'q="' + payload + '"&maxResults=40' )
+    .then((response) => response.data)
+    .catch((error) => {
       console.log(error);
     });
 }
