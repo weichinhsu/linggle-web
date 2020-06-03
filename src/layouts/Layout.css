@@ -1,5 +1,5 @@
 .layout {
-  background-color: #203152;
+  background-color: #3A405A;
   height: 100%;
 }
 
@@ -59,4 +59,13 @@
   bottom: 0;
   display: flex;
   background-color: #203152;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0; 
+}
+
+.dropdown-menu {
+  border: none
 }

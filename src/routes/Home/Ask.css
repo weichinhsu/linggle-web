@@ -46,3 +46,7 @@
   color: #ef8f00;
   font-weight: 600;
 }
+
+.example-hide {
+  display: none;
+}
