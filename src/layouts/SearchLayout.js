@@ -9,8 +9,9 @@ import './Layout.css'
 class SearchLayout extends Component {
     
     render() {
-        const { children, search } = this.props
-        const location = this.props.location.pathname.replace("/", "")
+        const { children, search, pathname } = this.props
+        console.log(this.props)
+        const location = pathname.replace("/home/", "")
         return (
             <div className="layout">
                 <header>

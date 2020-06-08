@@ -159,12 +159,12 @@ sup {
 }
 
 a {
-  color: #f4623a;
+  color: #FC6D6F;
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
-  color: #d6370c;
+  color: rgb(252, 168, 170);
   text-decoration: underline;
 }
 
@@ -10007,7 +10007,7 @@ html {
 hr.divider {
   max-width: 3.25rem;
   border-width: 0.2rem;
-  border-color: #f4623a;
+  border-color: #FC6D6F;
 }
 
 hr.light {
@@ -10096,7 +10096,7 @@ hr.light {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);
-  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../assets/img/bg-masthead.jpg");
+  background: linear-gradient(to bottom, rgba(66, 79, 92, 0.8) 0%, rgba(66, 79, 92, 0.8) 100%), url("../assets/img/bg-masthead.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;

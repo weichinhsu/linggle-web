@@ -26,7 +26,7 @@ class Home extends Component {
             type: 'search/GET_search',
             payload: this.state.search,
         }).then(() => {
-            this.props.history.push('ask')
+            this.props.history.push('/home/ask')
         });
         event.preventDefault();
     }
@@ -54,16 +54,16 @@ class Home extends Component {
                         </form>
                     </div>
                     <div className="App-feature">
-                        <Button icon={faListOl} name="Ask" click={() => history.push('ask')} />
-                        <Button icon={faFileAlt} name="Read" click={() => history.push('read')} />
-                        <Button icon={faEdit} name="Write" click={() => history.push('write')} />
-                        <Button icon={faSpellCheck} name="Grammar" click={() => history.push('grammar')} />
-                        <Button icon={faLanguage} name="Translate" click={() => history.push('translate')} />
+                        <Button icon={faListOl} name="Ask" click={() => history.push('/home/ask')} />
+                        <Button icon={faFileAlt} name="Read" click={() => history.push('/home/read')} />
+                        <Button icon={faEdit} name="Write" click={() => history.push('/home/write')} />
+                        <Button icon={faSpellCheck} name="Grammar" click={() => history.push('/home/grammar')} />
+                        <Button icon={faLanguage} name="Translate" click={() => history.push('/home/translate')} />
                     </div>
                 </div>
                 <footer>
                     <Button icon={faBars} />
-                    <Button name="About" />
+                    <Button name="About" click={() => history.push('/intro/about')} />
                     <Button name="How it works" />
                 </footer>
             </div>

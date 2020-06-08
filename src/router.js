@@ -6,7 +6,9 @@ import AppSwitch from './routes/AppSwitch'
 import Home from './routes/Home/Home';
 import Ask from './routes/Home/Ask';
 import Read from './routes/Home/Read';
+import Write from './routes/Home/Write';
 import About from './routes/Intro/About';
+import Media from './routes/Intro/Media';
 
 class Root extends Component {
     static propTypes = {
@@ -28,9 +30,17 @@ const routes = [{
     path: '/home/read',
     component: Read,
 }, {
+    name: 'write',
+    path: '/home/write',
+    component: Write,
+}, {
     name: 'about',
     path: '/intro/about',
     component: About
+}, {
+    name: 'media',
+    path: '/intro/media',
+    component: Media
 }]
 
 // const RouterRoot = withRouter(_.flow()(Root));
@@ -40,7 +50,7 @@ export default (props) => {
         <BrowserRouter basename='/'>
             <Switch>
                 <Route path="/" exact component={Home} />
-                <AppSwitch route={routes}>
+                <AppSwitch>
                     {routes.map(item => (<Route key={item.path} path={item.path} exact component={item.component} />))}
                 </AppSwitch>
             </Switch>

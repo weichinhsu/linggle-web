@@ -1,0 +1,92 @@
+#about {
+  display: flex;
+  background-color: #2F3E53 !important;
+  color: white;
+  margin:5em 0;
+  height: 600px;
+}
+
+#about > .left, #about > .right {
+  flex:1
+}
+
+#about > .left {
+  background-image: url("../../assets/intro/search-knowledge.png");
+  background: linear-gradient(to bottom, rgba(56, 56, 56, 0.5) 0, rgba(56, 56, 56, .5) 100%), url(../../assets/intro/search-knowledge.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  padding: 2.5em
+}
+
+#about > .right {
+  margin: 2.5em;
+  font-size: 20px;
+}
+
+#lab {
+  display: flex;
+  background-color: #b3d2e8 !important;
+  color:black;
+  height: 600px;
+}
+
+#lab > .left, #lab > .right {
+  flex:1
+}
+
+#lab > .left {
+  margin: 2.5em;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#lab > .right {
+  background-image: url("../../assets/intro/lab.png");
+  background: linear-gradient(to bottom, rgba(56, 56, 56, 0.5) 0, rgba(56, 56, 56, .5) 100%), url(../../assets/intro/lab.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  padding: 2.5em;
+}
+
+#project {
+  display: flex;
+  background-color: #2F3E53 !important;
+  margin:5em 0;
+  color:white;
+  height: 600px;
+}
+
+#project > .left, #project > .right {
+  flex:1
+}
+
+#project > .left {
+  background-image: url("../../assets/intro/projects.png");
+  background: linear-gradient(to bottom, rgba(56, 56, 56, 0.5) 0, rgba(56, 56, 56, .5) 100%), url(../../assets/intro/projects.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  padding: 2.5em
+}
+
+#project > .right {
+  margin: 2.5em;
+  font-size: 20px;
+}
+
+header.masthead {
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 4.5rem);
+  background: linear-gradient(to bottom, rgba(66, 79, 92, 0.8) 0%, rgba(66, 79, 92, 0.8) 100%), url(../../assets/intro/mission.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}

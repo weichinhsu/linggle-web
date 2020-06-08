@@ -31,8 +31,6 @@ class Button extends Component {
             placeholder="Search Linggle, or enter any text or URL" autoFocus data-reference="parent"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
             value={this.state.search} onChange={this.handleChange} />
-          <div className="dropdown-menu" aria-labelledby="search">
-          </div>
         </div>
       </form>
     </div>

@@ -14,9 +14,10 @@
 
 .read {
   display: flex;
+  flex:1
 }
 
-.read > .left, .right {
+.read > .left, .read > .right {
   flex: 1;
   margin: 20px;
   /* background-color: white; */
@@ -50,3 +51,4 @@
 .example-hide {
   display: none;
 }
+

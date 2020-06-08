@@ -11,9 +11,9 @@ class AppSwitch extends Component {
     const { pathname } = location;
 
     if (pathname.indexOf('/home') === 0) {
-      return (<SearchLayout><Switch>{children}</Switch></SearchLayout>)
+      return (<SearchLayout pathname={pathname} ><Switch>{children}</Switch></SearchLayout>)
     } else if (pathname.indexOf('/intro') === 0) {
-      return (<IntroLayout><Switch>{children}</Switch></IntroLayout>)
+      return (<IntroLayout pathname={pathname} ><Switch>{children}</Switch></IntroLayout>)
     } else {
       return (<Switch>{children}</Switch>)
     }
