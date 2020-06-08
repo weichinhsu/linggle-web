@@ -7,7 +7,7 @@ class About extends Component {
   render() {
     return (
       <div className="">
-        <header class="masthead">
+        <header class="masthead" id="mission">
           <div class="container h-100">
             <div class="row h-100 align-items-center justify-content-center text-center">
               <div class="col-lg-10 align-self-end">

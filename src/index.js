@@ -3,6 +3,7 @@ import 'react-app-polyfill/stable'
 import dva from 'dva';
 import { createBrowserHistory as createHistory } from 'history';
 import './index.css'
+import "antd/dist/antd.css";
 import search from './models/search';
 
 const app = dva({ history: createHistory( ) });

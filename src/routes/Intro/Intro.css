@@ -90,3 +90,8 @@ header.masthead {
   background-attachment: scroll;
   background-size: cover;
 }
+
+.media {
+  padding-top: 73px;
+  margin: 3em 10em
+}
