@@ -42,9 +42,9 @@ export default (props) => {
         <BrowserRouter basename='/'>
             <Switch>
                 <Route path="/" exact component={Home} />
-                <AppSwitch>
+                {/* <AppSwitch>
                     {routes.map(item => (<Route key={item.path} path={item.path} exact component={item.component} />))}
-                </AppSwitch>
+                </AppSwitch> */}
             </Switch>
         </BrowserRouter>
     )
