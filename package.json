@@ -24,11 +24,7 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-<<<<<<< HEAD
     "start": "react-scripts start",
-=======
-    "start": "PORT=5577 react-scripts start",
->>>>>>> b31bc4264cf4db43adb70638bbcda42f5cd3ebba
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
