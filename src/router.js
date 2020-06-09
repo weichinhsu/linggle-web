@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-// import { Route, Switch, routerRedux, withRouter, Redirect } from 'dva/router';
-import { HashRouter, Route, withRouter, Switch, Redirect, BrowserRouter } from "react-router-dom";
+// import { Route, Switch, BrowserRouter } from 'dva/router';
+import { Route, Switch, BrowserRouter } from "react-router-dom";
 import PropTypes from 'prop-types';
-// import _ from 'lodash';
-import SearchLayout from './layouts/SearchLayout'
-import Home from './routes/Home';
-import Ask from './routes/Ask';
-import Read from './routes/Read';
+import AppSwitch from './routes/AppSwitch'
+import Home from './routes/Home/Home';
+import Ask from './routes/Home/Ask';
+import Read from './routes/Home/Read';
+import Write from './routes/Home/Write';
+import About from './routes/Intro/About';
+import Media from './routes/Intro/Media';
 
 class Root extends Component {
     static propTypes = {
@@ -21,28 +23,37 @@ class Root extends Component {
 
 const routes = [{
     name: 'ask',
-    path: '/ask',
+    path: '/home/ask',
     component: Ask,
 }, {
     name: 'read',
-    path: '/read',
+    path: '/home/read',
     component: Read,
-},
-]
+}, {
+    name: 'write',
+    path: '/home/write',
+    component: Write,
+}, {
+    name: 'about',
+    path: '/intro/about',
+    component: About
+}, {
+    name: 'media',
+    path: '/intro/media',
+    component: Media
+}]
 
 // const RouterRoot = withRouter(_.flow()(Root));
 
 export default (props) => {
     return (
-        <HashRouter basename='/'>
+        <BrowserRouter basename='/'>
             <Switch>
                 <Route path="/" exact component={Home} />
-                <SearchLayout route={routes}>
-                    <Switch>
+                <AppSwitch>
                     {routes.map(item => (<Route key={item.path} path={item.path} exact component={item.component} />))}
-                    </Switch>
-                </SearchLayout>
+                </AppSwitch>
             </Switch>
-        </HashRouter>
+        </BrowserRouter>
     )
 }

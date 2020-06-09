@@ -1,23 +1,17 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 import { connect } from 'dva';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faListOl, faFileAlt, faEdit, faSpellCheck, faLanguage } from '@fortawesome/free-solid-svg-icons'
+import Button from '../components/Navigation'
+import SearchInput from '../components/SearchInput'
 import './Layout.css'
 
-class Button extends Component {
-    render() {
-        const { icon, name, active } = this.props
-        return <Link className={active ? 'active' : null} to={name.toLowerCase()}>
-            {icon ? <FontAwesomeIcon icon={icon} className="feature-icon" /> : null}
-            {name ? name : null}
-        </Link>
-    }
-}
 class SearchLayout extends Component {
+    
     render() {
-        const { children } = this.props
-        const location = this.props.location.pathname.replace("/", "")
+        const { children, search, pathname } = this.props
+        console.log(this.props)
+        const location = pathname.replace("/home/", "")
         return (
             <div className="layout">
                 <header>
@@ -25,16 +19,7 @@ class SearchLayout extends Component {
                         <Link to="/" className="logo">
                             <div>Linggle</div>
                         </Link>
-                        <div className="border shadow px-3 py-1 mx-3 bg-white rounded-pill search">
-                            <div className="input-group">
-                                <div className="search-icon"></div>
-                                <input type="text" id="search" className="dropdown form-control border-0 shadow-none ml-4 mr-4"
-                                    placeholder="Search Linggle, or enter any text or URL" autoFocus data-reference="parent"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
-                                <div className="dropdown-menu" aria-labelledby="search">
-                                </div>
-                            </div>
-                        </div>
+                        <SearchInput value={search}/>
                         <button type="button" className="btn sign-in rounded-pill">Sign in</button>
                     </div>
                     <div className="menu">
@@ -45,7 +30,7 @@ class SearchLayout extends Component {
                         <Button icon={faLanguage} name="Translate" active={location === 'translate' ? true : false} />
                     </div>
                 </header>
-                <div className="container-fluid p-0">
+                <div className="container-fluid p-0 content">
                     {children}
                 </div>
             </div>
@@ -53,4 +38,10 @@ class SearchLayout extends Component {
     }
 }
 
-export default connect()(SearchLayout)
+const mapStateToProps = (state) => {
+    return {
+        search: state.search.list ? state.search.list.query : null
+    }
+}
+
+export default connect(mapStateToProps)(SearchLayout)

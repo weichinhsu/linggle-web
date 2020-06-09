@@ -1,5 +1,7 @@
 .ask {
   background-color: white;
+  overflow: scroll;
+  padding-bottom: 5em;
 }
 
 .progress {
@@ -12,9 +14,10 @@
 
 .read {
   display: flex;
+  flex:1
 }
 
-.read > .left, .right {
+.read > .left, .read > .right {
   flex: 1;
   margin: 20px;
   /* background-color: white; */
@@ -31,3 +34,21 @@
 .read > .left > #input:focus:before{
   content:none;
 }
+
+.ask-icon {
+  text-align: center;
+}
+
+.example > div {
+  margin: 10px 0
+}
+
+.highlight {
+  color: #ef8f00;
+  font-weight: 600;
+}
+
+.example-hide {
+  display: none;
+}
+

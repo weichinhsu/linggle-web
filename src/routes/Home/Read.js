@@ -7,7 +7,7 @@ class Read extends Component {
     return (
       <div className="read">
         <div className="left">
-              <div contenteditable="true" className="form-control" id="input" style={{height: '10rem'}}>
+              <div contenteditable="true" className="form-control" id="input" style={{height: '100%;'}}>
               
               </div>
         </div>
