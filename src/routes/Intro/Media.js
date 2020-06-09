@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'dva';
 import './Intro.css'
 import { List, Avatar, Space } from 'antd';
-import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
 
 const listData = [];
 for (let i = 0; i < 23; i++) {
@@ -16,13 +15,6 @@ for (let i = 0; i < 23; i++) {
       '語料庫的大數據學習有別於傳統的英語學習方式，是國內英文相關系所相當推崇一種語言學習方式，使用者透過親自操作，可以更深入探索語言的變化，發現各種意想不到的詞彙組合變化，讓學習英文變成一場有趣的探險。另外，語料庫所蒐集的語料為英語母語人士在真實情境中使用的自然語言...',
   });
 }
-
-const IconText = ({ icon, text }) => (
-  <Space>
-    {React.createElement(icon)}
-    {text}
-  </Space>
-);
 
 class Media extends Component {
 

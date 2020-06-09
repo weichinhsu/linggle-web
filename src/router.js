@@ -9,17 +9,7 @@ import Read from './routes/Home/Read';
 import Write from './routes/Home/Write';
 import About from './routes/Intro/About';
 import Media from './routes/Intro/Media';
-
-class Root extends Component {
-    static propTypes = {
-        app: PropTypes.object.isRequired,
-        history: PropTypes.object.isRequired,
-    }
-    render() {
-        const { children } = this.props;
-        return children;
-    }
-}
+import News from './routes/Intro/News';
 
 const routes = [{
     name: 'ask',
@@ -41,9 +31,11 @@ const routes = [{
     name: 'media',
     path: '/intro/media',
     component: Media
+}, {
+    name: 'news',
+    path: '/intro/news',
+    component: News
 }]
-
-// const RouterRoot = withRouter(_.flow()(Root));
 
 export default (props) => {
     return (
