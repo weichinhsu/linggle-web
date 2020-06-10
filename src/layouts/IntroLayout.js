@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 import { connect } from 'dva';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faListOl, faFileAlt, faEdit, faSpellCheck, faLanguage } from '@fortawesome/free-solid-svg-icons'
 import './Layout.css'
 
 class IntroLayout extends Component {
@@ -58,7 +56,7 @@ class IntroLayout extends Component {
                     <Link className="nav-link js-scroll-trigger" to="/intro/about">About</Link>
                   </li>
                   <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  {/* <Link className="dropdown-item" to="/intro/about">Mission</Link>
+                    {/* <Link className="dropdown-item" to="/intro/about">Mission</Link>
                   <Link className="dropdown-item" to="/intro/about#about">Story</Link>
                   <Link className="dropdown-item" to="/intro/about#lab">Lab</Link>
                   <Link className="dropdown-item" to="/intro/about#project">Projects</Link> */}
@@ -78,7 +76,9 @@ class IntroLayout extends Component {
                 <li className="nav-item">
                   <Link className="nav-link js-scroll-trigger" to="/intro/blog">Blog</Link>
                 </li>
-                <li className="nav-item"><a className="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                <li className="nav-item">
+                  <Link className="nav-link js-scroll-trigger" to="/intro/contact">Contact</Link>
+                </li>
                 <li className="nav-item">
                   <a className="nav-link js-scroll-trigger" href="https://www.facebook.com/Lingglebynlplab" target="_blank"><i className="fab fa-facebook-square"></i></a>
                 </li>

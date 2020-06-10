@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 // import { Route, Switch, BrowserRouter } from 'dva/router';
 import { Route, Switch, BrowserRouter } from "react-router-dom";
-import PropTypes from 'prop-types';
 import AppSwitch from './routes/AppSwitch'
 import Home from './routes/Home/Home';
 import Ask from './routes/Home/Ask';
@@ -9,7 +8,9 @@ import Read from './routes/Home/Read';
 import Write from './routes/Home/Write';
 import About from './routes/Intro/About';
 import Media from './routes/Intro/Media';
+import Blog from './routes/Intro/Blog';
 import News from './routes/Intro/News';
+import Contact from './routes/Intro/Contact';
 
 const routes = [{
     name: 'ask',
@@ -35,6 +36,14 @@ const routes = [{
     name: 'news',
     path: '/intro/news',
     component: News
+}, {
+    name: 'contact',
+    path: '/intro/contact',
+    component: Contact
+}, {
+    name: 'blog',
+    path: '/intro/blog',
+    component: Blog
 }]
 
 export default (props) => {
@@ -42,9 +51,9 @@ export default (props) => {
         <BrowserRouter basename='/'>
             <Switch>
                 <Route path="/" exact component={Home} />
-                {/* <AppSwitch>
+                <AppSwitch>
                     {routes.map(item => (<Route key={item.path} path={item.path} exact component={item.component} />))}
-                </AppSwitch> */}
+                </AppSwitch>
             </Switch>
         </BrowserRouter>
     )

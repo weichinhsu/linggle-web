@@ -95,3 +95,80 @@ header.masthead {
   padding-top: 73px;
   margin: 3em 10em
 }
+
+.news {
+  padding-top: 73px;
+  margin: 3em 0
+}
+
+.carousel {
+  padding: 1.5em
+}
+
+.carousel-item {
+  display: flex;
+}
+
+.blog-content {
+  margin: 8em 10em 0 10em
+}
+
+#blog {
+  display: flex;
+  background-color: #ececec !important;
+  color:black;
+  height: 400px;
+  margin: 2em 0;
+}
+
+#blog > .left, #blog > .right {
+  flex:1
+}
+
+#blog > .left {
+  margin: 2.5em;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 0.4
+}
+
+#blog > .right {
+  background-image: url("../../assets/intro/lab.png");
+  background: linear-gradient(to bottom, rgba(56, 56, 56, 0.5) 0, rgba(56, 56, 56, .5) 100%), url(../../assets/intro/lab.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  padding: 2.5em;
+  flex: 0.6
+}
+
+#contact {
+  display: flex;
+  background-color: #2F3E53 !important;
+  color: white;
+  /* margin:5em 0; */
+  height: 600px;
+  margin: 8em 10em;
+}
+
+#contact > .left, #contact > .right {
+  flex:1
+}
+
+#contact > .left {
+  background-image: url("../../assets/intro/search-knowledge.png");
+  background: linear-gradient(to bottom, rgba(56, 56, 56, 0.5) 0, rgba(56, 56, 56, .5) 100%), url(../../assets/intro/search-knowledge.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  padding: 2.5em
+}
+
+#contact > .right {
+  margin: 2.5em;
+  font-size: 20px;
+}
