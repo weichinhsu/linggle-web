@@ -17,8 +17,8 @@
 
 .sign-in {
   color: #212529;
-  background-color: #ffa51f;
-  border-color: #ffa51f;
+  background-color: #FC6D6F;
+  border-color: #FC6D6F;
   padding: .4em 2em;
 }
 
@@ -69,7 +69,7 @@
 }
 
 .App-feature > div:hover {
-  color: #ffa51f
+  color: #FC6D6F
 }
 
 .feature-icon {

@@ -49,13 +49,13 @@
 }
 
 .layout > header > .menu > a.active {
-  color: #ffa51f;
-  border-bottom: #ffa51f 3px solid;
+  color: #FC6D6F;
+  border-bottom: #FC6D6F 3px solid;
 }
 
 .content {
   position: absolute;
-  top: 132px;
+  top: 125px;
   bottom: 0;
   display: flex;
   background-color: #3A405A;
