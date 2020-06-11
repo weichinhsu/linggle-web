@@ -1,20 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'dva';
 import './Intro.css'
-import { List, Avatar, Space } from 'antd';
-
-const listData = [];
-for (let i = 0; i < 23; i++) {
-  listData.push({
-    href: 'https://ant.design',
-    title: `英文系最受歡迎的線上語料庫：用20個網站學習英文句型與詞彙搭配 / 廖柏森`,
-    avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-    description:
-      '2020.05.10',
-    content:
-      '語料庫的大數據學習有別於傳統的英語學習方式，是國內英文相關系所相當推崇一種語言學習方式，使用者透過親自操作，可以更深入探索語言的變化，發現各種意想不到的詞彙組合變化，讓學習英文變成一場有趣的探險。另外，語料庫所蒐集的語料為英語母語人士在真實情境中使用的自然語言...',
-  });
-}
+import { List } from 'antd';
+import data from '../../data/media'
 
 class Media extends Component {
 
@@ -30,10 +18,10 @@ class Media extends Component {
             },
             pageSize: 3,
           }}
-          dataSource={listData}
-          renderItem={item => (
+          dataSource={data}
+          renderItem={(item,index) => (
             <List.Item
-              key={item.title}
+              key={index}
               extra={
                 <img
                   width={272}
@@ -41,12 +29,13 @@ class Media extends Component {
                   src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
                 />
               }
+              actions={[<a href={item.href}>{item.date}</a>]}
             >
               <List.Item.Meta
                 title={<a href={item.href}>{item.title}</a>}
-                description={item.description}
+                description={item.subtitle}
               />
-              {item.content}
+              {item.description}
             </List.Item>
           )}
         />

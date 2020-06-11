@@ -1,65 +1,61 @@
 import React, { Component } from 'react'
 import { connect } from 'dva';
 import { Divider, Row, Col, Card } from 'antd'
+import ReactMarkdown from 'react-markdown'
 import './Intro.css'
+import data from '../../data/blog'
+
 import mission from '../../assets/intro/mission.png'
+import test from '../../assets/test.md'
+
+// const data = from '../../assets/test.md'
 
 const { Meta } = Card
 
 class Blog extends Component {
+  state={
+    md:''
+  }
+  async componentDidMount() {
+    const file = await import('../../assets/test.md');
+    console.log(file)
+    const response = await fetch(file.default);
+    const text = await response.text();
 
+    this.setState({
+        md: text
+    })
+}
   render() {
     return (
       <div className="blog-content">
+        {/* <ReactMarkdown source={this.state.md} /> */}
         <section className="bg-primary" id="blog">
           <div className="left">
-            <h3 className="text-uppercase font-weight-bold">NLPlab NTHU Taiwan</h3>
+            <h3 className="text-uppercase font-weight-bold">{data.new.title}</h3>
             <p>
-              Natural Language Processing lab was established in 1988 by Prof. Jason S. Chang.
-            </p>
-            <p>
-              The lab had since been a leading pioneer in AI research and projects,
-              including computer-assisted language learning, word alignment, information retrieval and machine translation.
+            {data.new.description}
             </p>
           </div>
           <div className="right">
 
           </div>
         </section>
-        <Divider />
-        <Row gutter={[24, 24]}>
-          <Col span={6}>
-            <Card
-              hoverable
-              cover={<img alt="example" src={mission} />}
-            >
-              <Meta title="Europe Street beat" description="www.instagram.com" />
-            </Card>
-          </Col>
-          <Col span={6}>
-            <Card
-              hoverable
-              cover={<img alt="example" src={mission} />}
-            >
-              <Meta title="Europe Street beat" description="www.instagram.com" />
-            </Card>
-          </Col>
-          <Col span={6}>
-            <Card
-              hoverable
-              cover={<img alt="example" src={mission} />}
-            >
-              <Meta title="Europe Street beat" description="www.instagram.com" />
-            </Card>
-          </Col>
-          <Col span={6}>
-            <Card
-              hoverable
-              cover={<img alt="example" src={mission} />}
-            >
-              <Meta title="Europe Street beat" description="www.instagram.com" />
-            </Card>
-          </Col>
+        <Divider style={{margin: '3em 0'}}/>
+        <Row gutter={[32, 32]}>
+          {
+            data.other.map((val, index) => {
+              return <Col key={index} span={8}>
+              <Card
+                hoverable
+                cover={<img alt="example" src={mission} />}
+              >
+                <Meta title={val.title} description={val.description} />
+              </Card>
+            </Col>
+            })
+          }
+          
         </Row>
       </div>
     )
