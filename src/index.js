@@ -5,10 +5,12 @@ import { createBrowserHistory as createHistory } from 'history';
 import './index.css'
 import "antd/dist/antd.css";
 import search from './models/search';
+import global from './models/global';
 
 const app = dva({ history: createHistory( ) });
 
 app.model(search)
+app.model(global)
 app.router(require('./router').default);
 app.start('#root');
 

@@ -10,25 +10,23 @@ import project from '../../assets/intro/projects.png'
 import story from '../../assets/intro/search-knowledge.png'
 
 const { Meta } = Card;
-const responsive = {
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3,
-    slidesToSlide: 3 // optional, default to 1.
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
-    slidesToSlide: 2 // optional, default to 1.
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-    slidesToSlide: 1 // optional, default to 1.
-  }
-};
 class News extends Component {
+  handleScroll = () => {
+    if (window.pageYOffset > 100)
+      this.props.dispatch({ type: 'global/SET_scroll', payload:'navbar-scrolled' });
+    else
+      this.props.dispatch({ type: 'global/SET_scroll', payload:'' });
+  }
 
+  componentDidMount(){
+    this.props.dispatch({ type: 'global/SET_scroll', payload:'' });
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+    this.props.dispatch({ type: 'global/SET_scroll', payload:'navbar-scrolled' });
+  }
   render() {
     return (
       <div className="news" >
@@ -38,7 +36,7 @@ class News extends Component {
             <h3>1</h3>
           </div>
           <div>
-            <img src={mission} />
+            <img src={lab} />
             <h3>2</h3>
           </div>
           <div>

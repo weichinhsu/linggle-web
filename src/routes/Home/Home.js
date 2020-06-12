@@ -7,7 +7,7 @@ import { faListOl, faFileAlt, faEdit, faSpellCheck, faLanguage, faBars } from '@
 class Button extends Component {
     render() {
         const { icon, name, click } = this.props
-        return <div onClick={click}>
+        return <div onClick={click} style={{cursor: 'pointer'}}>
             {icon ? <FontAwesomeIcon icon={icon} className="feature-icon" /> : null}
             {name ? name : null}
         </div>

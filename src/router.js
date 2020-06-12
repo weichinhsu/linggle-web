@@ -9,6 +9,7 @@ import Write from './routes/Home/Write';
 import About from './routes/Intro/About';
 import Media from './routes/Intro/Media';
 import Blog from './routes/Intro/Blog';
+import BlogContent from './routes/Intro/BlogContent';
 import News from './routes/Intro/News';
 import Contact from './routes/Intro/Contact';
 
@@ -44,6 +45,9 @@ const routes = [{
     name: 'blog',
     path: '/intro/blog',
     component: Blog
+}, {
+    path: '/intro/blog/:id',
+    component: BlogContent
 }]
 
 export default (props) => {
