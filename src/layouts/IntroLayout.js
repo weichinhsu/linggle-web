@@ -4,45 +4,19 @@ import { connect } from 'dva';
 import './Layout.css'
 
 class IntroLayout extends Component {
-  state = {
-    scroll: ''
+
+  componentDidMount(){
+    const location = this.props.pathname.replace("/intro/", "")
+    if (location === 'about' || location === 'news')
+      this.props.dispatch({ type: 'global/SET_scroll', payload:'' });
   }
-
-  handleScroll = () => {
-    if (window.pageYOffset > 100)
-      this.setState({ scroll: 'navbar-scrolled' });
-    else
-      this.setState({ scroll: '' });
-  }
-
-  // componentDidMount(){
-  //   const location = this.props.pathname.replace("/intro/", "")
-  //   if (location === 'about')
-  //     window.addEventListener('scroll', this.handleScroll);
-  // }
-
-  // componentDidUpdate(prevProps) {
-  //   const location = this.props.pathname.replace("/intro/", "")
-  //   const pre_location = prevProps.pathname.replace("/intro/", "")
-  //   console.log(location, pre_location)
-  //   if (location !== 'about' && location !== pre_location)
-  //     this.setState({ scroll: 'navbar-scrolled' });
-  //   if (location === 'about' && location !== pre_location)
-  //     window.addEventListener('scroll', this.handleScroll);
-  // }
-
-  // componentWillUnmount() {
-  //   const location = this.props.pathname.replace("/intro/", "")
-  //   if (location === 'about')
-  //     window.removeEventListener('scroll', this.handleScroll);
-  // }
 
   render() {
     const { children } = this.props
     const location = this.props.pathname.replace("/intro/", "")
     return (
       <div >
-        <nav className={"navbar navbar-expand-lg navbar-light fixed-top py-3 navbar-scrolled" + this.state.scroll} id="mainNav">
+        <nav className={"navbar navbar-expand-lg navbar-light fixed-top py-3 " + this.props.nav_scroll} id="mainNav">
           <div className="container">
             <Link className="navbar-brand js-scroll-trigger logo" to="/">
               <div>Linggle</div>
@@ -94,4 +68,10 @@ class IntroLayout extends Component {
   }
 }
 
-export default connect()(IntroLayout)
+const mapStateToProps = (state) => {
+  return {
+    nav_scroll: state.global.nav_scroll ? state.global.nav_scroll : null
+  }
+}
+
+export default connect(mapStateToProps)(IntroLayout)

@@ -27,7 +27,7 @@
 
 #lab {
   display: flex;
-  background-color: #b3d2e8 !important;
+  background-color: #CDD8DA !important;
   color:black;
   height: 600px;
 }
@@ -56,9 +56,8 @@
 
 #project {
   display: flex;
-  background-color: #2F3E53 !important;
+  background-color: #E5DBD6 !important;
   margin:5em 0;
-  color:white;
   height: 600px;
 }
 
@@ -97,8 +96,8 @@ header.masthead {
 }
 
 .news {
-  padding-top: 73px;
-  margin: 3em 0
+  /* padding-top: 73px; */
+  /* margin: 3em 0 */
 }
 
 .carousel {
@@ -171,4 +170,16 @@ header.masthead {
 #contact > .right {
   margin: 2.5em;
   font-size: 20px;
+}
+
+.ant-carousel .slick-slide {
+  text-align: center;
+  height: 560px;
+  line-height: 160px;
+  background: #364d79;
+  overflow: hidden;
+}
+
+.ant-carousel .slick-slide h3 {
+  color: #fff;
 }

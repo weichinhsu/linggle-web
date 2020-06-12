@@ -3,7 +3,21 @@ import { connect } from 'dva';
 import './Intro.css'
 
 class About extends Component {
+  handleScroll = () => {
+    if (window.pageYOffset > 100)
+      this.props.dispatch({ type: 'global/SET_scroll', payload:'navbar-scrolled' });
+    else
+      this.props.dispatch({ type: 'global/SET_scroll', payload:'' });
+  }
 
+  componentDidMount(){
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+    this.props.dispatch({ type: 'global/SET_scroll', payload:'navbar-scrolled' });
+  }
   render() {
     return (
       <div className="">
@@ -44,7 +58,7 @@ class About extends Component {
         </section>
         <section class="bg-primary" id="lab">
           <div className="left">
-            <h3 class="text-uppercase text-white font-weight-bold">NLPlab NTHU Taiwan</h3>
+            <h3 class="text-uppercase font-weight-bold">NLPlab NTHU Taiwan</h3>
             <p>
               Natural Language Processing lab was established in 1988 by Prof. Jason S. Chang.
             </p>
@@ -62,7 +76,7 @@ class About extends Component {
           <div className="left">
           </div>
           <div className="right">
-            <h3 class="text-uppercase text-white font-weight-bold">Projects</h3>
+            <h3 class="text-uppercase font-weight-bold">Projects</h3>
             <p>
               Cool English – An Online English Learning Platform
               Taiwan’s Ministry of Education
