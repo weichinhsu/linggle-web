@@ -6,10 +6,12 @@ import './index.css'
 import "antd/dist/antd.css";
 import search from './models/search';
 import global from './models/global';
+import introduce from './models/introduce';
 
 const app = dva({ history: createHistory( ) });
 
 app.model(search)
+app.model(introduce)
 app.model(global)
 app.router(require('./router').default);
 app.start('#root');

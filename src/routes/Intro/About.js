@@ -12,6 +12,9 @@ class About extends Component {
 
   componentDidMount(){
     window.addEventListener('scroll', this.handleScroll);
+    this.props.dispatch({
+      type: 'introduce/GET_about',
+    });
   }
 
   componentWillUnmount() {
