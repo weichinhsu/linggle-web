@@ -29,7 +29,7 @@ module: {
 },
 devServer: {
   inline: true,
-  port: 8008,
+  port: 5577,
 },
 plugins: [HTMLWebpackPluginConfig],
 };
