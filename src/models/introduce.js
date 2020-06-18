@@ -17,10 +17,9 @@ export default {
     * GET_about({ payload }, { put, call, select }) {
       try {
         const data = yield call(api.get_about);
-        console.log(data)
         yield put({
           type: 'SET_about',
-          payload: data,
+          payload: JSON.parse(data.about),
         })
       } catch (error) {
         console.log(error)
